@@ -1,49 +1,38 @@
 ﻿using System;
 
-namespace EmployeeDetails
+namespace SortArray
 {
-    class Employee
+    class Program
     {
-        int id;
-        string name;
-        int age;
-        int mobileno;
-        public void setEmployee(int id, string name, int age, int mobileno)
+        static void Main(string[] args)
         {
-            this.id = id;
-            this.name = name;
-            this.age = age;
-            this.mobileno = mobileno;
-        }
-        public void getEmployee()
-        {
-            Console.WriteLine("Employee_Id is: {0}", this.id);
-            Console.WriteLine("Employee_Name is: {0}", this.name);
-            Console.WriteLine("Employee_age is: {0}", this.age);
-            Console.WriteLine("Employee_Contact number is: {0}", this.mobileno);
-        }
-
-
-
-        //class Program
-        //{
-        public static void Main(string[] args)
-        {
-            Console.WriteLine("Enter Employee_Id: ");
-            int id = int.Parse(Console.ReadLine());
-            Console.WriteLine("Enter Employee_ Name: ");
-            string name = Console.ReadLine();
-            Console.WriteLine("Enter Employee_Age: ");
-            int age = int.Parse(Console.ReadLine());
-            Console.WriteLine("Enter Employee Contact Number: ");
-            int mobileno = int.Parse(Console.ReadLine());
-            Employee obj = new Employee();
-            obj.setEmployee(id, name, age, mobileno);
-            obj.getEmployee();
-            Console.WriteLine("...............");
-            Console.ReadLine();
-
+            int[,] my_array = new int[3, 4]
+            {
+                {21,45,12,65},
+                {21,65,78,89},
+                {65,89,99,88}
+            };
+            for (int i = 0; i<my_array.GetLength(0); i++)
+            {
+                for (int j = 0; j<my_array.GetLength(1); j++)
+                {
+                    Console.Write(my_array[i, j] + " ");
+                }
+                Console.WriteLine();
+            }
+           /* int[] my_array = new int[4];
+            my_array[0] = 1231;
+            my_array[1] = 2312;
+            my_array[2] = 3212;
+            my_array[3] = 4112;
+            foreach(int item in my_array)
+            {
+                Console.WriteLine(item);
+            }*/
+            /*for (int i = 0; i<my_array.Length; i++)
+            {
+                Console.WriteLine(my_array[i]);
+            }*/
         }
     }
 }
-//}
